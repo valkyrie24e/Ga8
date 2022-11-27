@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
-import pickle
+
 st.header('Divide Two Numbers')
 def user_input_features():
 name1 = st.munber_input("Enter the first number", "Type Here ...")
@@ -24,10 +24,12 @@ else:
         st.text("Enter the numbers")
 if(st.button("submit")):
    st.text("The answer is {}.".format(answer))
-     data = {'Enter the first number': name1,
+else:
+    st.error("not valid")
+data = {'Enter the first number': name1,
             'Enter the second number': name2,
             'Get answer in': getanswer,
             }
-    features = pd.DataFrame(data, index=[0])
-    return features
+features = pd.DataFrame(data, index=[0])
+return features
   
