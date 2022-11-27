@@ -7,7 +7,7 @@ st.header('Divide Two Numbers')
 def user_input_features():
 name1 = st.munber_input("Enter the first number", "Type Here ...")
 name2 = st.number_input("Enter the second number", "Type Here ...")
-Getanswer = st.selectbox("Get answer in:",['whole', 'Float'])
+getanswer = st.selectbox("Get answer in:",['whole', 'Float'])
 
 if(status == 'Whole'):
     # take height input in centimeters
@@ -26,7 +26,7 @@ if(st.button("submit")):
    st.text("The answer is {}.".format(answer))
      data = {'Enter the first number': name1,
             'Enter the second number': name2,
-            'Get answer in': Getanswer,
+            'Get answer in': getanswer,
             }
     features = pd.DataFrame(data, index=[0])
     return features
